@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-buttons start>
+            <button ion-button icon-only (click)="closeModal()">
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-title>Add Places</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list inset>
+        <ion-item>
+        <ion-input type="text" placeholder="Location name" [(ngModel)]="locationName"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+        <ion-textarea placeholder="Notes or Description about the location ..." [(ngModel)]="locationDesc"></ion-textarea>
+        </ion-item>
+            <button ion-button  icon-left  full color="dark" clear (click)="openGallery()">
+                <ion-icon name="attach"></ion-icon>
+                Attach images ...
+            </button>
+        <div class="photos" *ngIf="imageURI">
+            <img [src]="imageURI">
+        </div>
+        <button ion-button block default (click)="addPlace()">Add Place</button>
+    </ion-list>
+</ion-content>
+

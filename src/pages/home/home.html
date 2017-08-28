@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>My Wishlist</ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="openAction()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="positioning">
+  <span *ngIf="data.length != 0;else noDataAvailable">
+  <span *ngFor="let location of data">
+    <span *ngIf="location.status == 0">
+    <ion-card [id]="location.id">
+      <img [src]="location.locationImage"/>
+      <ion-fab right top>
+          <a ion-fab color="primary" href="https://www.google.co.in/maps/search/{{location.locationName}}/">
+            <ion-icon name="pin"></ion-icon>
+          </a>
+        </ion-fab>
+      <ion-card-content>
+        <ion-card-title>{{location.locationName}}</ion-card-title>
+        <p read-more>
+            {{location.locationDesc}}
+        </p>
+        <ion-grid no-padding>
+            <ion-row>
+              <ion-col col-4>
+                  <button ion-button block color="dark" (click)="openCard(location.id)">More</button>
+              </ion-col>
+              <ion-col col-8>
+                <ion-item>
+                  <ion-label>Place visited</ion-label>
+                  <ion-toggle checked="false" color="dark" (ionChange)="statusChanged(location.id)"></ion-toggle>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    </span>
+  </span>
+  </span>
+
+  <ng-template #noDataAvailable>
+    <div class="no-data-available">
+      <span class="enroute-title">enroute</span>
+      <h3>Welcome</h3>
+      <p>Start adding places to your wish list.</p>
+    </div>
+  </ng-template>
+      <ion-fab right bottom>
+          <button ion-fab color="dark" (click)="openModal()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+      </ion-fab>
+
+</ion-content>

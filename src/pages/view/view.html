@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-buttons start>
+            <button ion-button icon-only (click)="closeCard()">
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>
+            {{locationName}}
+        </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <img [src]="locationImage">
+    <p>{{locationDesc}}</p>
+  </ion-content>
+  

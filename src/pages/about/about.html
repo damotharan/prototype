@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Places visited
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="positioning">
+    <span *ngIf="data.length != 0;else noDataAvailable">
+    <span *ngFor="let location of data">
+      <span *ngIf="location.status == 1">
+      <ion-card [id]="location.id">
+        <img [src]="location.locationImage"/>
+        <ion-fab right top>
+            <button ion-fab color="primary">
+              <ion-icon name="pin"></ion-icon>
+            </button>
+          </ion-fab>
+        <ion-card-content>
+          <ion-card-title>{{location.locationName}}</ion-card-title>
+          <p read-more>
+              {{location.locationDesc}}
+          </p>
+          <ion-grid no-padding>
+              <ion-row>
+                <ion-col col-4>
+                    <button ion-button block color="dark" (click)="openCard(location.id)">More</button>
+                </ion-col>
+                <ion-col col-8>
+                  <ion-item>
+                    <ion-label>Place visited</ion-label>
+                    <ion-toggle checked="true" color="dark" (ionChange)="statusChanged(location.id)"></ion-toggle>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+        </ion-card-content>
+      </ion-card>
+      </span>
+    </span>
+    </span>
+  
+    <ng-template #noDataAvailable>
+        <div class="no-data-available">
+            <span class="enroute-title">enroute</span>
+            <p>Places you mark as visited appear here.</p>
+          </div>
+    </ng-template>
+        
+  
+  </ion-content>
+
+
