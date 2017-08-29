@@ -1,9 +1,11 @@
-This is a prototype to our unnamed project.
+This is a prototype to our *unnamed* project.
 
-Technologies: 
-Ionic 2 with Angular 4.
+### TECHNOLOGIES USED. 
 
-Plugins: 
-cordova-plugin-camera
-cordova-plugin-file
-cordova-sqlie-storage
+* *Ionic 2*
+* *Angular 4*
+
+### PLUGINS USED.
+`cordova-plugin-camera`  
+`cordova-plugin-file`  
+`cordova-sqlie-storage`  
