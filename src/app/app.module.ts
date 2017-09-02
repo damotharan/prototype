@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { VisitedPage } from '../pages/visited/visited';
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { WishListPage } from '../pages/wishlist/wishlist';
 import { TabsPage } from '../pages/tabs/tabs';
+
 import { MoreDirective } from './more';
 import { AddPlaceComponent } from '../pages/add places/addplaces';
 import { ViewCard } from '../pages/view/view';
@@ -15,17 +16,17 @@ import { Data } from './data';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 import { Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
-import { NativeStorage } from '@ionic-native/native-storage';
 import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
     MyApp,
+    VisitedPage,
     AboutPage,
-    ContactPage,
-    HomePage,
+    WishListPage,
     TabsPage,
     MoreDirective,
     AddPlaceComponent,
@@ -38,9 +39,9 @@ import { SQLite } from '@ionic-native/sqlite';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    VisitedPage,
     AboutPage,
-    ContactPage,
-    HomePage,
+    WishListPage,
     TabsPage,
     AddPlaceComponent,
     ViewCard
@@ -51,7 +52,6 @@ import { SQLite } from '@ionic-native/sqlite';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
     File,
-    NativeStorage,
     SQLite,
     GetDataService,
     Data

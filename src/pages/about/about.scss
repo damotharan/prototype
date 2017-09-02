@@ -1,31 +1,21 @@
 page-about {
- 
-}
-ion-title  {
-    div{
-        font-weight: normal !important;
+    ion-title {
+        div {
+            font-weight: normal !important;
+        }
     }
-}
-
-.no-data-available {
-    width: 75%;
-    margin: 0 auto;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-
-    .enroute-title {
-        font-family: 'Gochi Hand', cursive;
-        font-size: 60px;
+    .en-padding {
+        padding: 15px;
+        height: 100%;
+        position: relative;
+    }
+    .copyright {
+        font-size: 1rem;
         color: #ccc;
-        display: block;
+        position: absolute;
+        bottom: 20px;
         text-align: center;
-    }
-
-    p {
-        text-align: center;
-        display: block;
-        width: 80%;
-        margin: 0 auto;
+        width: 100%;
+        left: 0;
     }
 }

@@ -4,24 +4,22 @@ import { ModalController, NavParams } from 'ionic-angular';
 import { AddPlaceComponent } from '../add places/addplaces';
 import { ViewCard } from '../view/view';
 import { ActionSheetController } from 'ionic-angular';
-import { ContactPage } from '../contact/contact';
-import { NativeStorage } from '@ionic-native/native-storage';
+import { AboutPage } from '../about/about';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { GetDataService } from '../../app/get';
 import { Data } from '../../app/data';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-wishlist',
+  templateUrl: 'wishlist.html'
 })
-export class HomePage {
+export class WishListPage {
   public data: Array<any> = [];
   keyArray: Array<string> = [];
   constructor(
     public navCtrl: NavController,
     private modal: ModalController,
     private action: ActionSheetController,
-    private nativeStorage: NativeStorage,
     private sqlite: SQLite,
     private getService: GetDataService,
     private _data: Data
@@ -61,7 +59,7 @@ export class HomePage {
         {
           text: 'About Us',
           handler: () => {
-            let myModal = this.modal.create(ContactPage);
+            let myModal = this.modal.create(AboutPage);
             myModal.present();
           }
         }

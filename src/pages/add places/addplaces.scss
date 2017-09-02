@@ -1,13 +1,15 @@
-ion-title  {
-    div{
-        font-weight: normal !important;
+page-add-places {
+    ion-title  {
+        div{
+            font-weight: normal !important;
+        }
+    }  
+    ion-textarea {
+        textarea{
+            max-width: 100%;
+            width: 100%;
+            height: 40vh;
+        }
     }
 }
 
-ion-textarea {
-    textarea{
-        max-width: 100%;
-        width: 100%;
-        height: 40vh;
-    }
-}

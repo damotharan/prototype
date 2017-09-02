@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
 import { Camera } from '@ionic-native/camera';
-import { NativeStorage } from '@ionic-native/native-storage';
 import { File } from '@ionic-native/file';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { GetDataService } from '../../app/get';
 import { Data } from '../../app/data';
 
 @Component({
+    selector : "page-add-places",
     templateUrl: "addplaces.html"
 })
 export class AddPlaceComponent {
@@ -18,7 +18,6 @@ export class AddPlaceComponent {
     constructor(
         private viewCtrl: ViewController, 
         private camera: Camera, 
-        private nativeStorage: NativeStorage, 
         private file: File,
         private sqlite: SQLite,
         private getService: GetDataService,
